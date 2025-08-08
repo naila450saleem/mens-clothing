@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Mens-Clothing/static/css/main.0a086ff9.css",
-    "main.js": "/Mens-Clothing/static/js/main.8855ecee.js",
-    "static/media/tex.png": "/Mens-Clothing/static/media/tex.48bbf0b3607d4eb8fa22.png",
-    "static/media/banner3.jpg": "/Mens-Clothing/static/media/banner3.f8560f5af73dbd68ec4f.jpg",
-    "static/media/banner1.jpg": "/Mens-Clothing/static/media/banner1.ca04b81348cd06d04ff0.jpg",
-    "static/media/banner2.jpg": "/Mens-Clothing/static/media/banner2.d467671e6cd37c46f27e.jpg",
-    "static/media/banner4.jpg": "/Mens-Clothing/static/media/banner4.42afa699885908182795.jpg",
-    "static/media/logo1.png": "/Mens-Clothing/static/media/logo1.df705e9847598487fb14.png",
-    "static/media/g3.jpg": "/Mens-Clothing/static/media/g3.586d7a5c3943ce15f6ce.jpg",
-    "static/media/b3.jpg": "/Mens-Clothing/static/media/b3.33c1b4911499ef916265.jpg",
-    "static/media/t1.jpg": "/Mens-Clothing/static/media/t1.dd4fc15dcabf7a5bc00f.jpg",
-    "static/media/j1.jpg": "/Mens-Clothing/static/media/j1.bcba971e4445ad89e9a0.jpg",
-    "static/media/jec5.jpg": "/Mens-Clothing/static/media/jec5.3d8f5146ac3759a2c32c.jpg",
-    "index.html": "/Mens-Clothing/index.html",
-    "main.0a086ff9.css.map": "/Mens-Clothing/static/css/main.0a086ff9.css.map",
-    "main.8855ecee.js.map": "/Mens-Clothing/static/js/main.8855ecee.js.map"
+    "main.css": "/mens-clothing/static/css/main.0a086ff9.css",
+    "main.js": "/mens-clothing/static/js/main.64341dba.js",
+    "static/media/tex.png": "/mens-clothing/static/media/tex.48bbf0b3607d4eb8fa22.png",
+    "static/media/banner3.jpg": "/mens-clothing/static/media/banner3.f8560f5af73dbd68ec4f.jpg",
+    "static/media/banner1.jpg": "/mens-clothing/static/media/banner1.ca04b81348cd06d04ff0.jpg",
+    "static/media/banner2.jpg": "/mens-clothing/static/media/banner2.d467671e6cd37c46f27e.jpg",
+    "static/media/banner4.jpg": "/mens-clothing/static/media/banner4.42afa699885908182795.jpg",
+    "static/media/logo1.png": "/mens-clothing/static/media/logo1.df705e9847598487fb14.png",
+    "static/media/g3.jpg": "/mens-clothing/static/media/g3.586d7a5c3943ce15f6ce.jpg",
+    "static/media/b3.jpg": "/mens-clothing/static/media/b3.33c1b4911499ef916265.jpg",
+    "static/media/t1.jpg": "/mens-clothing/static/media/t1.dd4fc15dcabf7a5bc00f.jpg",
+    "static/media/j1.jpg": "/mens-clothing/static/media/j1.bcba971e4445ad89e9a0.jpg",
+    "static/media/jec5.jpg": "/mens-clothing/static/media/jec5.3d8f5146ac3759a2c32c.jpg",
+    "index.html": "/mens-clothing/index.html",
+    "main.0a086ff9.css.map": "/mens-clothing/static/css/main.0a086ff9.css.map",
+    "main.64341dba.js.map": "/mens-clothing/static/js/main.64341dba.js.map"
   },
   "entrypoints": [
     "static/css/main.0a086ff9.css",
-    "static/js/main.8855ecee.js"
+    "static/js/main.64341dba.js"
   ]
 }
