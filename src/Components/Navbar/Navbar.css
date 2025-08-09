@@ -16,6 +16,14 @@
 }
 
 /* Navbar */
+
+.nav-links a.active,
+.mobile-nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -78,9 +86,14 @@
   background-color: var(--hover-bg);
 }
 
+/* Right icons container */
 .right-icons {
   display: flex;
   gap: 10px;
+  align-items: center;
+  position: relative;  /* ensure positioned for layering */
+  z-index: 1000;       /* bring to front */
+  background: transparent; /* remove yellow or set if debugging */
 }
 
 .right-icons button {
@@ -91,8 +104,16 @@
 }
 
 .menu-btn {
-  font-size: 20px;
+  display: inline-block !important; /* force always visible */
+  font-size: 28px;
+  color: #222;
+  cursor: pointer;
+  /* background: yellow; */ /* only for debugging */
+  padding: 5px;
+  z-index: 1001; /* above right-icons */
 }
+
+
 
 /* Search Bar */
 .search-bar {
@@ -114,9 +135,9 @@
   gap: 4px; /* space between text and icon */
 }
 /* Hide hamburger menu by default */
-.menu-btn {
+/* .menu-btn {
   display: none;
-}
+} */
 
 /* Mobile Menu */
 .mobile-menu {
@@ -163,13 +184,19 @@
 }
 
 
+/* Mobile styles */
 @media screen and (max-width: 768px) {
-  .menu-btn {
-    display: inline-block;
+  .nav-links {
+    display: none !important; /* hide nav links on mobile */
   }
 
-  /* Optional: Hide regular nav links on mobile */
-  .nav-links {
-    display: none;
+  .right-icons {
+    display: flex !important;  /* force visible on mobile */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .menu-btn {
+    display: inline-block !important; /* show hamburger on mobile */
   }
 }

@@ -1,81 +1,77 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
+import "./NavbarServices.css";
+import logo1 from '../assets/logo1.png';
 
 const NavbarServices = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
 
   return (
-    <nav className="bg-white fixed top-0 left-0 w-full z-50 ">
-      <div className="flex items-center justify-between px-6 pt-5 pb-3">
-
-        {/* Left Side Logo (Always visible) */}
-        <div className="text-2xl font-bold text-gray-800">
-          <Link to="/">Reprizo</Link>
-        </div>
-
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <li><Link to="/" className="hover:text-blue-600 transition">Home</Link></li>
-          <li><Link to="/features" className="hover:text-blue-600 transition">Features</Link></li>
-          <li><Link to="/blog" className="hover:text-blue-600 transition">Blog</Link></li>
-          <li><Link to="/contact" className="hover:text-blue-600 transition">Contact</Link></li>
-          <li><Link to="/about" className="hover:text-blue-600 transition">About</Link></li>
-          <li><Link to="/shop" className="hover:text-blue-600 transition">Shop</Link></li>
-
+    <nav className="navbar-services">
+      <div className="navbar-container">
+        {/* Left Links */}
+        <ul className="navbar-links left">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/features">Features</Link></li>
         </ul>
 
-        {/* Right Side (Desktop) */}
-        <div className="hidden md:flex items-center space-x-6 text-gray-700">
-          <Link to="/contact" className="hover:text-blue-600 transition font-medium">Contact</Link>
-
-          <Link to="/signin">
-  <button className="flex items-center gap-2 px-4 py-1 hover:bg-blue-600 hover:text-white transition">
-    <FiLogIn className="text-lg" />
-    Sign In
-  </button>
-</Link>
-
-
-          <Link to="/cart" className="flex items-center space-x-1 hover:text-blue-600 transition">
-            <FaShoppingCart className="text-xl" />
-            <span className="text-sm font-medium">CART</span>
-            <span className="text-sm">(0)</span>
+        {/* Logo Centered */}
+        <div className="navbar-logo">
+          <Link to="/">
+            <img src={logo1} alt="Reprizo Logo" />
           </Link>
         </div>
 
-        {/* Mobile: Hamburger + Login */}
-        <div className="md:hidden flex items-center space-x-4">
-          <Link to="/signin" className="text-2xl text-gray-700">
-            <FiLogIn />
-          </Link>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-2xl text-gray-700 focus:outline-none"
-          >
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
+        {/* Right Links */}
+        <ul className="navbar-links right">
+          <li><Link to="/signin" className="signin-btn"><FiLogIn /> Sign In</Link></li>
+          <li><Link to="/cart" className="cart-btn"><FaShoppingCart /> (0)</Link></li>
+          <li>
+            <button className="search-button" onClick={toggleSearch}>
+              <FaSearch />
+            </button>
+          </li>
+        </ul>
+
+        {/* Hamburger for Mobile */}
+        <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
 
+      {/* Search Bar (Toggle) */}
+      {showSearch && (
+        <div className="search-bar-wrapper">
+          <input
+            type="text"
+            placeholder="Search here..."
+            className="search-input"
+          />
+        </div>
+      )}
+
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-6 pb-4">
-          <ul className="flex flex-col space-y-3 text-gray-700 font-medium">
-            <li><Link to="/" className="hover:text-blue-600 transition">Home</Link></li>
-            <li><Link to="/features" className="hover:text-blue-600 transition">Features</Link></li>
-            <li><Link to="/blog" className="hover:text-blue-600 transition">Blog</Link></li>
-            <li><Link to="/contact" className="hover:text-blue-600 transition">Contact</Link></li>
-            <li><Link to="/about" className="hover:text-blue-600 transition">About</Link></li>
-            <li><Link to="/signin" className="hover:text-blue-600 transition">Sign In</Link></li>
-            <li>
-              <Link to="/cart" className="flex items-center space-x-1 hover:text-blue-600 transition">
-                <FaShoppingCart className="text-xl" />
-                <span className="text-sm font-medium">CART</span>
-                <span className="text-sm">(0)</span>
-              </Link>
-            </li>
+        <div className="mobile-menu">
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to="/features">Features</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/signin">Sign In</Link></li>
+            <li><Link to="/cart">Cart (0)</Link></li>
           </ul>
         </div>
       )}

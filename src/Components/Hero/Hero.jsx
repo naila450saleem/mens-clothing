@@ -2,12 +2,12 @@ import React from 'react';
 import './Hero.css';
 
 // Import all images
-import t1 from '../../assets/t1.jpg';
+import t1 from '../../assets/t1.png';
 import tex from '../../assets/tex.png';
 import j1 from '../../assets/j1.jpg';
 import jec5 from '../../assets/jec5.jpg';
 import g3 from '../../assets/g3.jpg';
-import b3 from '../../assets/b3.jpg';
+import b3 from '../../assets/b3.png';
 
 
 const Hero = () => {

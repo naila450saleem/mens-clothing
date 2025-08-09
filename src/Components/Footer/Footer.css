@@ -1,72 +1,246 @@
+/* Container base */
 .footer {
-  background-color: #0a0a23;
-  color: white;
-  padding: 40px 20px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #222;
+  color: #ccc;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  padding: 40px 70px;
 }
 
+/* Center and max width container */
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* Flex container for top section */
+.footer-top .footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Each section in top */
 .footer-section {
-  flex: 1 1 200px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  flex: 1;
+  min-width: 200px;
 }
 
 .footer-section h3 {
-  font-size: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: 10px;
 }
+.footer-section.location {
+  display: flex;
+  align-items: center;  /* vertically center if needed */
+  gap: 80px;            /* space between h3 and p */
+  flex-wrap: wrap;      /* wrap on small screens */
+}
 
-.footer-section ul {
+.footer-top,
+.footer-middle {
+  padding-top: 50px;
+  box-sizing: border-box; /* include padding in width */
+}
+
+.section-divider {
+  border: none;             /* remove default border */
+  border-top: 1px solid #444; /* 1px solid line */
+  margin: 20px 0;           /* vertical spacing above and below */
+  width: 100%;              /* full width */
+  max-width: 1200px;        /* optional max width */
+  margin-left: auto;
+  margin-right: auto;       /* center line if max-width */
+  opacity: 0.5;             /* lighter line */
+}
+
+
+/* Divider line between top sections */
+.divider {
+  width: 1px;
+  background-color: #444;
+  margin: 0 20px;
+  min-height: 80px;
+  align-self: center;
+  /* margin-left: 40px;  */
+  margin-right: 70px;
+}
+
+.divider {
+  width: 1px;
+  background-color: #444;
+  min-height: 150px;   /* adjust height to fit your layout */
+  margin: 0 20px;
+}
+
+
+/* Middle section grid */
+.footer-middle .footer-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 0; /* no gap, margin on divider will handle */
+  flex-wrap: nowrap; /* keep in single row */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Newsletter form */
+.newsletter {
+  flex: 1 1 auto;   /* allow shrinking and growing */
+  max-width: 400px; /* or any width you want */
+  min-width: 150px; 
+  padding-right: 11%;
+}
+
+.newsletter p {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 12px;
+  background-color: #333;
+  color: #ccc;
+  border: none;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 12px 25px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #fff;
+  color: #222;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.newsletter-form button:hover {
+  background-color: #ddd;
+}
+
+.divider {
+  width: 1px;
+  background-color: #444;
+  min-height: 200px; /* adjust height as needed */
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* Footer links grid */
+.footer-links {
+  padding-left: 20px;
+  display: flex;           /* side-by-side columns */
+  gap: 45px;               /* space between columns */
+  flex-wrap: wrap;         /* wrap if narrow screen */
+}
+
+.footer-links > div {
+  display: block;          /* each column stacked vertically */
+  min-width: 120px;        /* or your preferred width */
+}
+
+.footer-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-section ul li {
+.footer-links li {
   margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
-.footer-section ul li a {
-  color: white;
+.footer-links a {
+  color: #ccc;
   text-decoration: none;
-  transition: color 0.3s;
+  font-size: 13px;
 }
 
-.footer-section ul li a:hover {
-  color: #add8e6;
+.footer-links a:hover {
+  color: #fff;
 }
 
-.footer-section p {
-  margin-bottom: 8px;
-}
 
-.social-icons a {
-  color: white;
-  margin-right: 15px;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #add8e6;
-}
-
+/* Bottom section */
 .footer-bottom {
+  margin-top: 40px;
   text-align: center;
-  padding-top: 20px;
-  font-size: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px; /* Thoda kam padding mobile par */
+  }
+
+  /* Footer top section flex ko vertical stack karna */
+  .footer-top .footer-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Har section full width with margin bottom */
+  .footer-section {
+    min-width: auto;
+    width: 100%;
+  }
+
+  /* Location section vertical align and gap adjust */
+  .footer-section.location {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Divider vertical line chhota ya hide */
+  .divider {
+    display: none;
+  }
+
+  /* Footer middle grid flex vertical */
+  .footer-middle .footer-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Newsletter max-width remove, full width */
+  .newsletter {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  /* Footer links stacked vertically, gap thoda kam */
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 0;
+  }
+
+  .footer-links > div {
+    min-width: 100%;
+  }
+
+  /* Footer bottom padding and font-size adjust */
+  .footer-bottom {
+    font-size: 11px;
+    padding: 10px 0;
+  }
 }

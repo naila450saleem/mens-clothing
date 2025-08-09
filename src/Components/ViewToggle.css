@@ -1,0 +1,27 @@
+.view-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-btn {
+  padding: 10px;
+  border: none;
+  background-color: #e2e2e2;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #cfcfcf;
+}
+
+.toggle-btn.active {
+  background-color: black;
+  color: white;
+}
+
+.icon {
+  font-size: 24px;
+}

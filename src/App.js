@@ -1,35 +1,40 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+
 import Navbar from './Components/Navbar/Navbar';
-import PopupModal from './Components/Popup/PopupModal'; // Import your modal component.
+import NavbarServices from './Components/NavbarServices';
+import PopupModal from './Components/Popup/PopupModal';
 import Footer from './Components/Footer/Footer';
-import FloatingIcons from './Components/FloatingIcons/FloatingIcons'; // adjust path if needed
-import CustomCursor from './Components/CustomCursor/CustomCursor'; 
+import FloatingIcons from './Components/FloatingIcons/FloatingIcons';
+import CustomCursor from './Components/CustomCursor/CustomCursor';
+
 import Home from './Pages/Home';
 import About from './Pages/About';
-
-
+import Shop from './Pages/Shop';
+import CartPage from './Pages/CartPage';
 
 function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <>
-      <Navbar />
+      {/* Show Navbar only on Home page */}
+      {isHomePage ? <Navbar /> : <NavbarServices />}
+
       <PopupModal />
-
- <FloatingIcons />
+      <FloatingIcons />
       <CustomCursor />
-      
 
-      {/* Routes Section */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<h1>About Page</h1>} />
-        <Route path="/shop/rings" element={<h1>Rings</h1>} />
-        <Route path="/shop/necklaces" element={<h1>Necklaces</h1>} />
-        <Route path="/shop/bracelets" element={<h1>Bracelets</h1>} />
-        <Route path="/blog" element={<h1>Blog</h1>} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path='/cart' element={<CartPage />} />
+
+        {/* Add other routes here */}
       </Routes>
+
       <Footer />
     </>
   );

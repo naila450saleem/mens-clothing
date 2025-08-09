@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo1.png';
-import { Search, ShoppingCart, Menu, X,  } from "lucide-react";
+import { Search, ShoppingCart, Menu, X } from "lucide-react";
+import { NavLink } from 'react-router-dom'; // ✅ Use NavLink for routing
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,14 +10,14 @@ const Navbar = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);
 
   const navLinks = [
-    { name: "Home", to: "#" },
-    { name: "About", to: "#" },
-    { name: "Blog", to: "#" },
-    { name: "Shop", to: "#" },
-    { name: "Services", to: "#" },
-    { name: "FAQs", to: "#" },
-    { name: "Privacy", to: "#" },
-    { name: "Contact", to: "#" },
+    { name: "Home", to: "/" },
+    { name: "About", to: "/about" },
+    { name: "Blog", to: "/blog" },
+    { name: "Shop", to: "/shop" },
+    { name: "Services", to: "/services" },
+    { name: "FAQs", to: "/faqs" },
+    { name: "Privacy", to: "/privacy" },
+    { name: "Contact", to: "/contact" },
   ];
 
   const categories = ["Men", "Women", "Kids", "Accessories"];
@@ -31,14 +32,23 @@ const Navbar = () => {
       {/* Navbar */}
       <header className="navbar">
         <div className="logo-links">
-          <a href="#" className="logo">
+          <NavLink to="/" className="logo">
             <img src={logo} alt="Logo" />
-          </a>
+          </NavLink>
+
+
 
           <nav className="nav-links">
             {navLinks.map(link => (
-              <a key={link.name} href={link.to}>{link.name}</a>
+              <NavLink
+                key={link.name}
+                to={link.to}
+                className={({ isActive }) => isActive ? 'active' : ''}
+              >
+                {link.name}
+              </NavLink>
             ))}
+
             <div className="dropdown">
               <span onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}>
                 Categories ▾
@@ -46,7 +56,7 @@ const Navbar = () => {
               {isSubMenuOpen && (
                 <div className="dropdown-menu">
                   {categories.map(cat => (
-                    <a key={cat} href="#">{cat}</a>
+                    <a key={cat} href="#">{cat}</a> // Category pages not routed yet
                   ))}
                 </div>
               )}
@@ -54,11 +64,15 @@ const Navbar = () => {
           </nav>
         </div>
 
-        <div className="right-icons">
-          <Search className="icon-btn" onClick={() => setShowSearchBar(!showSearchBar)} />
-          <ShoppingCart className="icon-btn" />
-          <Menu className="menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} />
-        </div>
+       {/* Right icons only show if mobile menu is closed */}
+{!isMenuOpen && (
+  <div className="right-icons">
+    <Search className="icon-btn" onClick={() => setShowSearchBar(!showSearchBar)} />
+    <ShoppingCart className="icon-btn" />
+    <Menu className="menu-btn" onClick={() => setIsMenuOpen(true)} />
+  </div>
+)}
+
       </header>
 
       {/* Search Bar */}
@@ -68,21 +82,20 @@ const Navbar = () => {
         </div>
       )}
 
-     
-
-
-
-      
-
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="mobile-menu">
           <X className="close-btn" onClick={() => setIsMenuOpen(false)} />
           <nav className="mobile-nav">
             {navLinks.map(link => (
-              <a key={link.name} href={link.to} onClick={() => setIsMenuOpen(false)}>
+              <NavLink
+                key={link.name}
+                to={link.to}
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => isActive ? 'active' : ''}
+              >
                 {link.name}
-              </a>
+              </NavLink>
             ))}
             <div className="mobile-dropdown">
               <div onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}>Categories ▾</div>

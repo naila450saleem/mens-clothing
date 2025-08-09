@@ -1,8 +1,17 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Horizontal scrollbar nahi aayega */
+  width: 100%;
+}
+
 .banner-section {
-  width: 100vw;
+  width: 100%; /* Full width of parent */
   height: 80vh;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box; /* Ensure padding/border don't add extra width */
+  padding: 0 10px; /* Optional: thoda horizontal padding for mobile */
 }
 
 .slides-container {
@@ -37,6 +46,8 @@
   left: 2rem;
   color: white;
   max-width: 300px;
+  padding-left: 4%;
+  padding-bottom: 2%;
 }
 
 .banner-text {
@@ -56,4 +67,23 @@
 
 .banner-button:hover {
   background-color: #2563eb; /* lighter blue */
+}
+
+/* Mobile specific */
+@media (max-width: 768px) {
+  .banner-section {
+    height: 40vh; /* Thoda chota height mobile pe */
+    padding: 0 5px; /* Kam padding mobile pe */
+  }
+
+  .slide img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .slides-container {
+    padding: 0; /* Remove any padding that causes overflow */
+  }
 }

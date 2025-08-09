@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTh, FaList } from "react-icons/fa";
+import "./ViewToggle.css";
 
 export default function ViewToggle({ onViewChange }) {
   const [activeView, setActiveView] = useState("grid");
@@ -12,24 +13,20 @@ export default function ViewToggle({ onViewChange }) {
   };
 
   return (
-    <div className="flex space-x-2">
+    <div className="view-toggle">
       <button
         title="Grid View"
         onClick={() => handleViewChange("grid")}
-        className={`p-2 rounded ${
-          activeView === "grid" ? "bg-black text-white" : "bg-gray-200 text-black"
-        }`}
+        className={activeView === "grid" ? "toggle-btn active" : "toggle-btn"}
       >
-        <FaTh className="text-4xl" />
+        <FaTh className="icon" />
       </button>
       <button
         title="List View"
         onClick={() => handleViewChange("list")}
-        className={`p-2 rounded ${
-          activeView === "list" ? "bg-black text-white" : "bg-gray-200 text-black"
-        }`}
+        className={activeView === "list" ? "toggle-btn active" : "toggle-btn"}
       >
-        <FaList className="text-4xl" />
+        <FaList className="icon" />
       </button>
     </div>
   );

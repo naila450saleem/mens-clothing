@@ -1,149 +1,250 @@
-import React from "react";
-import NavbarServices from "../Components/NavbarServices";
-import ProductGrid from "../Components/ProductsGrid";
+import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import ViewToggle from "../Components/ViewToggle";
+import "./Shop.css";
 
-const Elementor = () => {
+import b0 from "../assets/b0.png";
+import b1 from "../assets/b1.png";
+import b2 from "../assets/b2.png";
+import b4 from "../assets/b4.png";
+import b5 from "../assets/b5.png";
+import b6 from "../assets/b6.png";
+import b7 from "../assets/b7.png";
+import b8 from "../assets/b8.png";
+import b9 from "../assets/b9.png";
+import b10 from "../assets/b10.png";
+
+
+
+const products = [
+  { name: "White Gold Earrings in White Diamonds", image: b0, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b1, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b2, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b4, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b5, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b6, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b7, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b8, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b9, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+  { name: "White Gold Earrings in White Diamonds", image: b10, originalPrice: 450, currentPrice: 430, discount: "-4%" },
+
+];
+
+// Price Filter Component (optional filtering logic placeholder)
+const PriceFilter = ({ minLimit = 0, maxLimit = 500, onFilter }) => {
+  const [minPrice, setMinPrice] = useState(31);
+  const [maxPrice, setMaxPrice] = useState(430);
+
+  const handleMinChange = (e) => {
+    const value = Math.min(Number(e.target.value), maxPrice - 1);
+    setMinPrice(value);
+  };
+
+  const handleMaxChange = (e) => {
+    const value = Math.max(Number(e.target.value), minPrice + 1);
+    setMaxPrice(value);
+  };
+
+  const applyFilter = () => {
+    if (onFilter) onFilter(minPrice, maxPrice);
+  };
+
   return (
-    <div className="m-0 p-0 overflow-x-hidden bg-white">
-      {/* Navbar */}
-      <NavbarServices />
-
-      {/* Top Section below Navbar */}
-      <section className="bg-black text-white min-h-[60vh] flex flex-col justify-center items-center px-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Shop</h1>
-        <p className="text-base md:text-lg text-gray-400 mb-2">Home / Shop</p>
-      </section>
-
-      {/* Grid Layout with Products and Sidebar */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-20 px-8">
-        {/* Product Grid */}
-        <div className="lg:col-span-3">
-          <ProductGrid />
-        </div>
-
-        {/* Right Sidebar */}
-        <div className="space-y-14">
-          {/* Search Box */}
-          <div className="h-[200px] bg-black p-4 text-white w-full max-w-xs ml-1 flex items-center justify-center">
-            <div className="w-full">
-              <h4 className="text-2xl font-semibold mb-4">Search</h4>
-              <div className="flex items-center bg-white rounded-md overflow-hidden">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="flex-1 px-3 py-2 text-white bg-[#2e2e2e] focus:outline-none text-lg"
-                />
-                <button className="bg-white p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-black"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 6.65a7.5 7.5 0 010 10.6z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Cart Box */}
-          <div className="bg-[#f7f8fa] p-4 text-black w-full max-w-xs h-[200px] ml-1 flex items-center justify-center">
-            <div className="p-2 text-black w-full max-w-sm mx-auto">
-              <h4 className="text-lg font-semibold mb-2">Shopping Cart</h4>
-              <p>No products in the cart.</p>
-            </div>
-          </div>
-
-          {/* Categories Box */}
-          <div className="bg-[#f7f8fa] p-4 text-white w-full max-w-xs h-[380px] ml-1">
-            <div className="p-4 text-black w-full max-w-sm mx-auto bg-[#f7f8fa]">
-              <h4 className="text-lg font-semibold mb-4">Categories</h4>
-              <ul className="space-y-2">
-                {[
-                  { label: "Affordable Watches", href: "/affordable-watches" },
-                  { label: "Gold Watches", href: "/gold-watches" },
-                  { label: "Jewelry", href: "/jewelry" },
-                  { label: "Limited Edition Watches", href: "/limited-edition" },
-                  { label: "Mechanical Watches", href: "/mechanical" },
-                  { label: "Sailing Watches", href: "/sailing-watches" },
-                  { label: "Swiss Watches", href: "/swiss-watches" },
-                  { label: "Vintage Watches", href: "/vintage-watches" },
-                  { label: "Watches with Gems", href: "/watches-with-gems" },
-                ].map((item) => (
-                  <li key={item.href} className="flex items-center">
-                    <span className="text-brown-500 mr-2">--</span>
-                    <a
-                      href={item.href}
-                      className="text-black-200 hover:text-[#a67c52] transition-colors duration-200"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Price Filter */}
-          <div className="bg-[#f7f8fa] p-4 text-black w-full max-w-xs h-[200px] ml-1">
-            <div className="p-4 rounded-md text-black w-full max-w-sm mx-auto bg-[#f7f8fa]">
-              <h4 className="text-lg font-semibold mb-4">Price Filter</h4>
-              <div className="relative flex items-center justify-center mb-4">
-                <div className="w-3 h-3 bg-[#A0522D] rounded-sm shadow-md"></div>
-                <div className="w-40 h-2 bg-[#A0522D] mx-1 rounded-full"></div>
-                <div className="w-3 h-3 bg-[#A0522D] rounded-sm shadow-md"></div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-700">
-                  Price: <span className="font-semibold">$31</span> — <span className="font-semibold">$430</span>
-                </span>
-                <button
-                  type="button"
-                  className="text-black px-3 py-1 border border-[#A0522D] hover:bg-[#A0522D]/10 transition"
-                >
-                  Filter
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div className="bg-[#f7f8fa] p-4 text-white w-full max-w-xs h-[250px] ml-1">
-            <div className="p-4 rounded-md text-black w-full max-w-sm mx-auto bg-[#f7f8fa]">
-              <h4 className="text-lg font-semibold mb-4">Shop by Tag</h4>
-              <div className="space-y-2">
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Accessories</span>
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Bracelet</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Earrings</span>
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Gems</span>
-                </div>
-                <div className="flex gap-2 flex-wrap">
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Necklace</span>
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Quality</span>
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Ring</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Watches</span>
-                  <span className="px-3 py-1 bg-transparent rounded border text-sm">Water-resistant</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+    <div className="price-filter">
+      <h4>Price Filter</h4>
+      <div className="price-slider">
+        <input type="range" min={minLimit} max={maxLimit} value={minPrice} onChange={handleMinChange} className="range-min" />
+        <input type="range" min={minLimit} max={maxLimit} value={maxPrice} onChange={handleMaxChange} className="range-max" />
+        <div className="bar" style={{ left: `${(minPrice / maxLimit) * 100}%`, right: `${100 - (maxPrice / maxLimit) * 100}%` }} />
+      </div>
+      <div className="price-range">
+        <span>
+          Price: <strong>${minPrice}</strong> — <strong>${maxPrice}</strong>
+        </span>
+        <button onClick={applyFilter}>Filter</button>
       </div>
     </div>
   );
 };
 
-export default Elementor;
+const ProductGrid = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 6;
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  return (
+    <div className="products-grid">
+      <div className="top-bar">
+        <ViewToggle />
+        <div className="sort-dropdown">
+          <select defaultValue="date">
+            <option value="popularity">Sort by popularity</option>
+            <option value="rating">Sort by average rating</option>
+            <option value="date">Sort by latest</option>
+            <option value="price">Sort by price: low to high</option>
+            <option value="price-desc">Sort by price: high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="grid">
+        {currentProducts.map((product, i) => (
+          <div key={i} className="product-card">
+            {product.discount && <span className="discount-badge">{product.discount}</span>}
+            <img src={product.image} alt={product.name} className="product-image" />
+            <h3 className="product-name">{product.name}</h3>
+            <div className="product-price">
+              <span className="original-price">${product.originalPrice.toFixed(2)}</span>
+              <span className="current-price">${product.currentPrice.toFixed(2)}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="pagination">
+  {/* Previous Button */}
+  {currentPage > 1 && (
+    <button onClick={() => handlePageChange(currentPage - 1)}>&larr;</button>
+  )}
+
+  {/* Show first page always */}
+  <button
+    onClick={() => handlePageChange(1)}
+    className={currentPage === 1 ? "active" : ""}
+  >
+    1
+  </button>
+
+  {/* Show dots if currentPage > 3 */}
+  {currentPage > 3 && <span className="dots">...</span>}
+
+  {/* Show pages around current page */}
+  {[currentPage - 1, currentPage, currentPage + 1].map((page) => {
+    if (page > 1 && page < totalPages) {
+      return (
+        <button
+          key={page}
+          onClick={() => handlePageChange(page)}
+          className={currentPage === page ? "active" : ""}
+        >
+          {page}
+        </button>
+      );
+    }
+    return null;
+  })}
+
+  {/* Show dots if currentPage < totalPages - 2 */}
+  {currentPage < totalPages - 2 && <span className="dots">...</span>}
+
+  {/* Show last page */}
+  {totalPages > 1 && (
+    <button
+      onClick={() => handlePageChange(totalPages)}
+      className={currentPage === totalPages ? "active" : ""}
+    >
+      {totalPages}
+    </button>
+  )}
+
+  {/* Next Button */}
+  {currentPage < totalPages && (
+    <button onClick={() => handlePageChange(currentPage + 1)}>&rarr;</button>
+  )}
+</div>
+
+    </div>
+  );
+};
+
+const Shop = () => {
+  const handlePriceFilter = (min, max) => {
+    console.log("Filter products between:", min, max);
+    // Add filtering logic here if needed
+  };
+
+  return (
+    <div className="elementor-container">
+      <section className="top-section">
+        <h1>Shop</h1>
+        <p>Home / Shop</p>
+      </section>
+
+      <div className="main-grid">
+        <div className="product-grid">
+          <ProductGrid />
+        </div>
+
+        <aside className="sidebar">
+          <div className="shop-search-wrapper">
+            <div className="shop-search-container">
+              <h4 className="shop-search-title">Search Products</h4>
+              <div className="shop-search-input">
+                <input type="text" placeholder="Search here..." />
+                <FaSearch />
+              </div>
+            </div>
+          </div>
+
+          <div className="cart-box">
+            <h4>Shopping Cart</h4>
+            <p>No products in the cart.</p>
+          </div>
+
+          <div className="categories-box">
+            <h4>Categories</h4>
+            <ul>
+              {[
+                "Affordable Watches",
+                "Gold Watches",
+                "Jewelry",
+                "Limited Edition Watches",
+                "Mechanical Watches",
+                "Sailing Watches",
+                "Swiss Watches",
+                "Vintage Watches",
+                "Watches with Gems",
+              ].map((cat, i) => (
+                <li key={i}>
+                  <span>--</span>{" "}
+                  <a href={`/${cat.toLowerCase().replace(/ /g, "-")}`}>{cat}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <PriceFilter onFilter={handlePriceFilter} />
+
+          <div className="tags-box">
+            <h4>Shop by Tag</h4>
+            <div className="tags">
+              {[
+                "Accessories",
+                "Bracelet",
+                "Earrings",
+                "Gems",
+                "Necklace",
+                "Quality",
+                "Ring",
+                "Watches",
+                "Water-resistant",
+              ].map((tag, i) => (
+                <span key={i}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+};
+
+export default Shop;
