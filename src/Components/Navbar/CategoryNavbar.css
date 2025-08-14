@@ -1,0 +1,68 @@
+.custom-navbar {
+  background-color: #202820;
+  padding: 10px 20px;
+}
+
+.custom-navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-navbar ul li button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+  white-space: nowrap; /* Prevent text breaking on small screens */
+}
+
+/* Hover effect */
+.custom-navbar ul li button:hover {
+  background-color: #2a7a2e;
+  color: #fff;
+}
+
+/* Active button */
+.custom-navbar ul li button.active {
+  background-color: #00b300; /* bright green */
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ===== Responsive Styling ===== */
+
+/* Tablet & below — horizontal scroll */
+@media (max-width: 768px) {
+  .custom-navbar ul {
+    flex-wrap: nowrap;         /* Prevent wrapping */
+    overflow-x: auto;          /* Allow horizontal scroll */
+    white-space: nowrap;       /* Keep items in one line */
+    justify-content: flex-start;
+    padding-bottom: 5px;
+  }
+
+  /* Hide scrollbar for cleaner look */
+  .custom-navbar ul::-webkit-scrollbar {
+    display: none;
+  }
+  .custom-navbar ul {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+}
+
+/* Small phones — smaller text & padding */
+@media (max-width: 480px) {
+  .custom-navbar ul li button {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}

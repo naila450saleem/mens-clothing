@@ -1,0 +1,56 @@
+.product-categories {
+  padding: 50px 0;
+  margin-left: 15px;
+}
+
+/* Container for each product box */
+.product-category-box {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Both images fit the container */
+.product-category-box img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+/* Hover image initially hidden */
+.product-category-box .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* Hover effect: swap images */
+.product-category-box:hover .hover-img {
+  opacity: 1;
+}
+
+.product-category-box:hover .real-img {
+  opacity: 0;
+}
+
+/* Flex layout for 2 images per row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between boxes */
+}
+
+/* Each column takes 50% width minus gap */
+.col-lg-6 {
+  flex: 0 0 calc(50% - 20px);
+  box-sizing: border-box;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+  .col-lg-6 {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}

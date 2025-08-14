@@ -1,0 +1,114 @@
+.sub_banners {
+  padding: 2px 0;
+  margin-left: 70px;
+}
+
+.sub_banners .left h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.sub_banners iframe {
+  border: none;
+}
+
+.sub_banners .right img {
+  width: 100%;
+  
+}
+
+/* Newsletter Section */
+.news_letter {
+  background-color: transparent;
+  padding: 60px 0;
+  color: #fff;
+}
+
+.news_letter .title_section h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: #3b3d36;
+  text-transform: uppercase;
+  font-style: italic;       /* makes text italic */
+  letter-spacing: 2px;
+}
+
+.news_letter_002 {
+  display: flex;
+  align-items: center;
+}
+
+.news_letter_001 form {
+  display: flex;
+  align-items: center;
+  width: 150%;
+}
+
+.form-group {
+  flex: 1; /* input takes remaining space */
+  margin-right: 20px; /* space between input and button */
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  margin-left: 30px;
+  border-radius: 10px;
+  border: 1px solid #ccc; /* light border */
+  outline: none;
+  font-size: 14px;
+}
+
+.btn {
+  background: none;       /* no background */
+  border: none;           /* no border */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;             /* remove extra space */
+}
+
+.btn i {
+  color: #b5d531;         /* icon color */
+  font-size: 24px;
+}
+
+
+/* Optional: hover effect */
+.btn:hover {
+  background-color: #a1c42b;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Newsletter right image */
+.news_letter .right img {
+  width: auto;           /* allow natural width */
+  max-width: 70%;        /* slightly smaller image */
+  display: block;        /* needed for margin alignment */
+  margin-left: 50%;     /* push image to the right */
+ 
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .sub_banners .row,
+  .news_letter .row {
+    flex-direction: column;
+  }
+
+  .sub_banners iframe {
+    height: 300px;
+  }
+
+  .news_letter {
+    padding: 40px 0;
+  }
+}

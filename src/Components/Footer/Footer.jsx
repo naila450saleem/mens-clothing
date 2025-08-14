@@ -1,107 +1,146 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Footer.css";
 
+// Images from src/assets
+// import footLogo from "../../assets/foot_loog.png";
+import footBorder from "../../assets/foot_border.png";
+import socialBorder from "../../assets/social_border.png";
+import alibabaLogo from "../../assets/alibaba-member-ide-logo.jpg";
+import gallery1 from "../../assets/1_pic.jpg";
+import gallery2 from "../../assets/2_pic.jpg";
+import gallery3 from "../../assets/3_pic.jpg";
+import gallery4 from "../../assets/4_pic.jpg";
+import gallery5 from "../../assets/5_pic.jpg";
+import gallery6 from "../../assets/6_pic.jpg";
+
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    console.log("Newsletter signup:", email);
-    setEmail("");
-  };
-
   return (
-    <footer className="footer">
-      {/* Top Section */}
-      <div className="footer-top">
-        <div className="footer-container">
-          <div className="footer-flex">
-            <div className="footer-section location">
-              <h3>Location</h3>
-              <p>
-                Lansing, Delta Township 6334 W.<br />
-                Saginaw, Suite D
-              </p>
+    <div>
+      {/* Footer Logo */}
+      {/* <div className="foot_logo">
+        <div className="border_001"></div>
+        <img src={footLogo} alt="footer logo" />
+      </div> */}
+
+      {/* Main Footer */}
+      <div className="footer">
+        <div className="container footer-container">
+          {/* Left: Contact */}
+          <div className="foot_contact">
+            <h1>QUICK CONTACT US</h1>
+            <img src={footBorder} alt="border" />
+            <ul>
+              <li>
+                <p>
+                  We appreciate that each individual customer’s needs are
+                  specific. We take the time to get to know you personally and
+                  ensure the products we design meet your requirements.
+                  Skilled stitching and developing team. Over 200 machines
+                  including Flat lock, overlock, singer, bartack, trimming,
+                  cutting, embroidery and sublimation printing machines.
+                </p>
+                <div className="line"></div>
+              </li>
+              <li>
+                <p>
+                  <span><i className="fas fa-map-marker-alt"></i></span>
+                  Sadra Badra Factory area, Near Pepsi agency, Daak Wala Stop Daska Road, 51480 Sialkot, Pakistan.
+                </p>
+                <div className="line"></div>
+              </li>
+              <li>
+                <p>
+                  <span><i className="fas fa-phone fa-rotate-90"></i></span>
+                  +92 332 8624992
+                </p>
+                <div className="line"></div>
+              </li>
+              <li>
+                <p>
+                  <span><i className="fas fa-envelope"></i></span>
+                  <a href="mailto:coresportswears@gmail.com">coresportswears@gmail.com</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          {/* Right: Information, Categories, Production */}
+          <div className="footer-right">
+            {/* Information */}
+            <div className="quick_links">
+              <h1>Information</h1>
+              <img src={footBorder} alt="border" />
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/customer_service">Customer Services</a></li>
+                <li><a href="/privacy_policy">Privacy Policy</a></li>
+                <li><a href="/catalogue">Catalogue</a></li>
+                <li><a href="/production">Exhibition</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+              </ul>
+{/* Social Icons horizontally under right sections */}
+  <div className="footer-right-social">
+    <div className="section-line"></div> {/* line added */}
+    <ul>
+      <li><a href="https://facebook.com" target="_blank"><i className="fab fa-facebook"></i></a></li>
+      <li><a href="https://twitter.com" target="_blank"><i className="fab fa-twitter"></i></a></li>
+      <li><a href="https://instagram.com" target="_blank"><i className="fab fa-instagram"></i></a></li>
+      <li><a href="https://linkedin.com" target="_blank"><i className="fab fa-linkedin-in"></i></a></li>
+      <li><a href="https://wa.me/923328624992" target="_blank"><i className="fab fa-whatsapp"></i></a></li>
+      <li><a href="https://pinterest.com" target="_blank"><i className="fab fa-pinterest"></i></a></li>
+      <li><a href="https://alibaba.com" target="_blank"><img src={alibabaLogo} alt="alibaba" /></a></li>
+    </ul>
+  </div>
+             
             </div>
 
-            <div className="divider" />
+            {/* Categories */}
+            <div className="foot_cat">
+              <h1>Our CATEGORIES</h1>
+              <img src={footBorder} alt="border" />
+              <ul>
+                <li><a href="/products/ski-snow-wear/ski-snowboarding-pants">Ski & Snow Wear</a></li>
+                <li><a href="/products/street-wears/pullover-hoodies">Street Wears</a></li>
+                <li><a href="/products/custom-team-wear/soccer-uniforms">Custom Team Wear</a></li>
+                <li><a href="/products/fitness-wear/leggings">Fitness Wear</a></li>
+                <li><a href="/products/head-wear-accessories/bandana-tubular">Head Wear & Accessories</a></li>
+                <li><a href="/products/bags/sports-backpack">Bags</a></li>
+              </ul>
+            </div>
 
-            <div className="footer-section hours">
-              <h3>Working Hours</h3>
-              <p>
-                Mon – Thu, 9:30 AM – 6:00 PM EST<br />
-                Fri, 9:30 AM – 3:00 PM EST
-              </p>
+            {/* Production Gallery */}
+            <div className="foot_gallery">
+              <h1>Production</h1>
+              <img src={footBorder} alt="border" />
+              <div className="gallery_row">
+                {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((img, i) => (
+                  <div className="gallery_box" key={i}>
+                    <img src={img} alt={`gallery ${i + 1}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="copyright2021">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              <p>@2023. All Rights Reserved By Core Sportswears.</p>
+            </div>
+            <div className="col-lg-6">
+              <p>Design & Developed By <a href="http://sialweb.net" target="_blank">sial web</a></p>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Horizontal divider line here */}
-<hr className="section-divider" />
-
-      <div className="footer-middle">
-  <div className="footer-container footer-grid">
-    <div className="newsletter">
-      {/* Newsletter content here */}
-      <p>
-        Sign up for our newsletter to receive special offers, news and great sales notifications.
-      </p>
-      <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email address"
-          required
-        />
-        <button type="submit">Subscribe</button>
-      </form>
     </div>
-
-    {/* Divider */}
-    <div className="divider" />
-
-    <div className="footer-links">
-      {/* Links content here */}
-      <div>
-        <h3>Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Info</h3>
-        <ul>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Our Mission</a></li>
-          <li><a href="#">Our History</a></li>
-          <li><a href="#">Contacts</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Socials</h3>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Pinterest</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">YouTube</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr className="section-divider" />
-
-      {/* Bottom Section */}
-      <div className="footer-bottom">
-        <p>AxiomThemes © 2025. All Rights Reserved.</p>
-      </div>
-    </footer>
   );
 };
 

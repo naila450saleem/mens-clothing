@@ -3,9 +3,9 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './Components/Navbar/Navbar';
 import NavbarServices from './Components/NavbarServices';
-import PopupModal from './Components/Popup/PopupModal';
+// import PopupModal from './Components/Popup/PopupModal';
 import Footer from './Components/Footer/Footer';
-import FloatingIcons from './Components/FloatingIcons/FloatingIcons';
+// import FloatingIcons from './Components/FloatingIcons/FloatingIcons';
 import CustomCursor from './Components/CustomCursor/CustomCursor';
 
 import Home from './Pages/Home';
@@ -22,8 +22,8 @@ function App() {
       {/* Show Navbar only on Home page */}
       {isHomePage ? <Navbar /> : <NavbarServices />}
 
-      <PopupModal />
-      <FloatingIcons />
+      {/* <PopupModal /> */}
+      {/* <FloatingIcons /> */}
       <CustomCursor />
 
       <Routes>

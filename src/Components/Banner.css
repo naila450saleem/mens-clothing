@@ -1,89 +1,109 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Horizontal scrollbar nahi aayega */
-  width: 100%;
-}
-
-.banner-section {
-  width: 100%; /* Full width of parent */
-  height: 80vh;
+/* Banner Container */
+.page-bg-slider {
+  position: relative;
+  min-height: 100vh;
   overflow: hidden;
-  position: relative;
-  box-sizing: border-box; /* Ensure padding/border don't add extra width */
-  padding: 0 10px; /* Optional: thoda horizontal padding for mobile */
+  margin-top: 42px;
 }
 
-.slides-container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s ease-in-out;
-}
-
-.slide {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.slide img {
+/* Banner Slides */
+.banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.8s ease;
+  z-index: 1;
 }
 
-.overlay {
+.banner-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.banner-slide.exit-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* Arrows */
+.banner-arrow {
   position: absolute;
-  inset: 0;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.text-overlay {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  color: white;
-  max-width: 300px;
-  padding-left: 4%;
-  padding-bottom: 2%;
-}
-
-.banner-text {
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-.banner-button {
-  background-color: #1e40af; /* brand midnight blue */
-  padding: 0.5rem 1rem;
-  color: white;
-  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  font-size: 40px;
   cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 600;
+  padding: 4px 18px;
+  border: none;
+  z-index: 5;
+  transition: background-color 0.3s ease;
 }
 
-.banner-button:hover {
-  background-color: #2563eb; /* lighter blue */
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+.banner-arrow:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
-/* Mobile specific */
+/* Bottom Image */
+.banner-bottom-img {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.banner-bottom-img img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 1024px) {
+  .banner-arrow {
+    font-size: 32px;
+    padding: 4px 14px;
+  }
+  .banner-bottom-img img {
+    max-width: 80%;
+  }
+}
+
 @media (max-width: 768px) {
-  .banner-section {
-    height: 40vh; /* Thoda chota height mobile pe */
-    padding: 0 5px; /* Kam padding mobile pe */
+  .page-bg-slider {
+    min-height: 70vh; /* shorter banner for mobile */
   }
-
-  .slide img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    display: block;
+  .banner-arrow {
+    font-size: 26px;
+    padding: 3px 10px;
   }
+  .banner-bottom-img img {
+    max-width: 90%;
+    bottom: -20px;
+  }
+}
 
-  .slides-container {
-    padding: 0; /* Remove any padding that causes overflow */
+@media (max-width: 480px) {
+  .page-bg-slider {
+    min-height: 60vh; /* smaller banner height for phones */
+  }
+  .banner-arrow {
+    font-size: 20px;
+    padding: 2px 8px;
+  }
+  .banner-bottom-img img {
+    max-width: 95%;
+    bottom: -10px;
   }
 }

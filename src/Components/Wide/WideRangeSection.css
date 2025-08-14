@@ -1,0 +1,77 @@
+.wide-range-section {
+  text-align: center;
+  padding: 30px 5px; /* less side padding */
+}
+
+.wide-range-text {
+  max-width: 800px;
+  margin: 0 auto 20px; /* slightly reduced bottom margin */
+}
+
+.wide-range-text h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.wide-range-text h2 span {
+  color: #b5d531; /* highlight color */
+}
+
+.section-border {
+  display: block;
+  margin: 0 auto 20px; /* centered under heading */
+  max-width: 700px; /* adjust as needed */
+  height: auto;
+}
+
+.wide-range-images {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* smaller gap between images */
+  flex-wrap: wrap;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 300px; /* slightly bigger base width */
+  max-width: 380px; /* allows slightly larger images */
+}
+
+.image-wrapper img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.real-img {
+  position: relative;
+  z-index: 1;
+}
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.image-wrapper:hover .real-img {
+  opacity: 0;
+}
+
+.image-wrapper:hover .hover-img {
+  opacity: 1;
+}
+
+/* Make images full width on mobile */
+@media (max-width: 768px) {
+  .image-wrapper {
+    max-width: 100%;
+  }
+
+  .wide-range-text h2 {
+    font-size: 1.6rem;
+  }
+}
