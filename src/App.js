@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import Navbar from './Components/Navbar/Navbar';
+import Navbar from './Components/Navbar/TopNavbar';
 import NavbarServices from './Components/NavbarServices';
 // import PopupModal from './Components/Popup/PopupModal';
 import Footer from './Components/Footer/Footer';

@@ -1,8 +1,10 @@
 .custom-navbar {
   background-color: #202820;
   padding: 10px 20px;
+  position: relative;
 }
 
+/* Default nav list */
 .custom-navbar ul {
   list-style: none;
   display: flex;
@@ -21,45 +23,66 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1rem;
-  white-space: nowrap; /* Prevent text breaking on small screens */
+  white-space: nowrap;
 }
 
-/* Hover effect */
 .custom-navbar ul li button:hover {
   background-color: #2a7a2e;
   color: #fff;
 }
 
-/* Active button */
 .custom-navbar ul li button.active {
-  background-color: #00b300; /* bright green */
+  background-color: #00b300;
   color: #fff;
   font-weight: bold;
 }
 
-/* ===== Responsive Styling ===== */
+/* ===== Hamburger Icon ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-/* Tablet & below — horizontal scroll */
+.hamburger span {
+  background: #fff;
+  height: 3px;
+  width: 25px;
+  border-radius: 2px;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .custom-navbar ul {
-    flex-wrap: nowrap;         /* Prevent wrapping */
-    overflow-x: auto;          /* Allow horizontal scroll */
-    white-space: nowrap;       /* Keep items in one line */
-    justify-content: flex-start;
-    padding-bottom: 5px;
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 15px;
   }
 
-  /* Hide scrollbar for cleaner look */
-  .custom-navbar ul::-webkit-scrollbar {
-    display: none;
-  }
+  /* Hide menu by default */
   .custom-navbar ul {
-    -ms-overflow-style: none;  /* IE/Edge */
-    scrollbar-width: none;     /* Firefox */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  /* Show menu when hamburger clicked */
+  .custom-navbar ul.menu-open {
+    display: flex;
+  }
+
+  /* Full width items */
+  .custom-navbar ul li button {
+    width: 100%;
+    text-align: left;
   }
 }
 
-/* Small phones — smaller text & padding */
 @media (max-width: 480px) {
   .custom-navbar ul li button {
     font-size: 0.9rem;

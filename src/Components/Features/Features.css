@@ -6,7 +6,8 @@
   flex-wrap: wrap;
   background-color: transparent;
   padding-bottom: 30px;
-  padding-top: 5px;
+  padding-top: 5%;
+  margin-top: 45%;
 }
 
 .feature {

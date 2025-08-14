@@ -8,12 +8,16 @@ import WhoWeAreSection from '../Components/WhoWeAre/WhoWeAreSection';
 import ProductCategories from '../Components/ProductCategories';
 import ServicesOffered from '../Components/ServicesOffered/ServicesOffered';
 import SubBannersNewsletter from '../Components/SubBannersNewsletter/SubBannersNewsletter';
+import TopNavbar from '../Components/Navbar/TopNavbar';
+import MainNavbar from '../Components/Navbar/MainNavbar';
 
 const Home = () => {
   return (
     <div>
       <Banner />
      <Features />
+     <TopNavbar />
+     <MainNavbar/>
      <CategoryNavbar />
      <WideRangeSection />
      <WhoWeAreSection />
