@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mens-clothing/static/css/main.c29f7477.css",
+    "main.css": "/mens-clothing/static/css/main.e7b20736.css",
     "main.js": "/mens-clothing/static/js/main.57738710.js",
     "static/media/about-2.jpg": "/mens-clothing/static/media/about-2.5f69aa54833432f707e5.jpg",
     "static/media/about-3.jpg": "/mens-clothing/static/media/about-3.b659d7a3e7fe432e851c.jpg",
@@ -53,11 +53,11 @@
     "static/media/certificates.png": "/mens-clothing/static/media/certificates.659e64fff7e25f797c68.png",
     "static/media/logo.png": "/mens-clothing/static/media/logo.4c68e81178bfc5eb3baa.png",
     "index.html": "/mens-clothing/index.html",
-    "main.c29f7477.css.map": "/mens-clothing/static/css/main.c29f7477.css.map",
+    "main.e7b20736.css.map": "/mens-clothing/static/css/main.e7b20736.css.map",
     "main.57738710.js.map": "/mens-clothing/static/js/main.57738710.js.map"
   },
   "entrypoints": [
-    "static/css/main.c29f7477.css",
+    "static/css/main.e7b20736.css",
     "static/js/main.57738710.js"
   ]
 }
