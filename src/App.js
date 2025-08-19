@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Shop from './Pages/Shop';
-import Categories from './Pages/Categories';
+// import Categories from './Pages/Categories';
 import Sitemap from './Pages/Sitemap';
 import Privacy from './Pages/Privacy';
 import FAQs from './Pages/FAQs';
@@ -34,7 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/categories" element={<Categories />} />
+        {/* <Route path="/categories" element={<Categories />} /> */}
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/faqs" element={<FAQs />} />

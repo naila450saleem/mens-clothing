@@ -15,7 +15,7 @@ const MainNavbar = () => {
     { name: "About Us", to: "/about" },
     {
       name: "Our Categories",
-      to: "/categories",
+      to: "#",
       subLinks: [
         { name: "Sky & Snow Wear", to: "/categories/sky-snow-wear" },
         { name: "Street Wears", to: "/categories/street-wears" },
