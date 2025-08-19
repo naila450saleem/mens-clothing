@@ -1,10 +1,7 @@
 {
   "files": {
-    "main.css": "/mens-clothing/static/css/main.e7b20736.css",
-    "main.js": "/mens-clothing/static/js/main.57738710.js",
-    "static/media/about-2.jpg": "/mens-clothing/static/media/about-2.5f69aa54833432f707e5.jpg",
-    "static/media/about-3.jpg": "/mens-clothing/static/media/about-3.b659d7a3e7fe432e851c.jpg",
-    "static/media/about-1.jpg": "/mens-clothing/static/media/about-1.013952b53af197fa39ff.jpg",
+    "main.css": "/mens-clothing/static/css/main.4c79229e.css",
+    "main.js": "/mens-clothing/static/js/main.92332bc7.js",
     "static/media/22_banner.jpg": "/mens-clothing/static/media/22_banner.f9776063d6ed947e2c3c.jpg",
     "static/media/24_banner.jpg": "/mens-clothing/static/media/24_banner.fbdc5e97c7085917fff4.jpg",
     "static/media/25_banner.jpg": "/mens-clothing/static/media/25_banner.ddc3c47c370b50541697.jpg",
@@ -26,7 +23,8 @@
     "static/media/services_offerd_box3.jpg": "/mens-clothing/static/media/services_offerd_box3.de086e251e2947f7b3d3.jpg",
     "static/media/c5h.jpg": "/mens-clothing/static/media/c5h.01e30c92a3084369c267.jpg",
     "static/media/b7.png": "/mens-clothing/static/media/b7.9933cb4845e7a33b40e0.png",
-    "static/media/logo1.png": "/mens-clothing/static/media/logo1.df705e9847598487fb14.png",
+    "static/media/2_page.jpg": "/mens-clothing/static/media/2_page.fb6bf99170b74a616cf5.jpg",
+    "static/media/customization.png": "/mens-clothing/static/media/customization.2a9252a48f4bbbd81220.png",
     "static/media/b0.png": "/mens-clothing/static/media/b0.cf5fad48cdbe256d359c.png",
     "static/media/c3.jpg": "/mens-clothing/static/media/c3.26c461c09bc697fe4ebc.jpg",
     "static/media/c3h.jpg": "/mens-clothing/static/media/c3h.0e9c871f0a7402b31c9f.jpg",
@@ -53,11 +51,11 @@
     "static/media/certificates.png": "/mens-clothing/static/media/certificates.659e64fff7e25f797c68.png",
     "static/media/logo.png": "/mens-clothing/static/media/logo.4c68e81178bfc5eb3baa.png",
     "index.html": "/mens-clothing/index.html",
-    "main.e7b20736.css.map": "/mens-clothing/static/css/main.e7b20736.css.map",
-    "main.57738710.js.map": "/mens-clothing/static/js/main.57738710.js.map"
+    "main.4c79229e.css.map": "/mens-clothing/static/css/main.4c79229e.css.map",
+    "main.92332bc7.js.map": "/mens-clothing/static/js/main.92332bc7.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7b20736.css",
-    "static/js/main.57738710.js"
+    "static/css/main.4c79229e.css",
+    "static/js/main.92332bc7.js"
   ]
 }
