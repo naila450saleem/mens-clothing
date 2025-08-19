@@ -1,17 +1,23 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import Navbar from './Components/Navbar/TopNavbar';
-import NavbarServices from './Components/NavbarServices';
-// import PopupModal from './Components/Popup/PopupModal';
+import TopNavbar from './Components/Navbar/TopNavbar';
+import MainNavbar from './Components/Navbar/MainNavbar';
+// import CategoryNavbar from './Components/Navbar/CategoryNavbar';
 import Footer from './Components/Footer/Footer';
-// import FloatingIcons from './Components/FloatingIcons/FloatingIcons';
-import CustomCursor from './Components/CustomCursor/CustomCursor';
 
+// Pages
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Shop from './Pages/Shop';
-import CartPage from './Pages/CartPage';
+import Categories from './Pages/Categories';
+import Sitemap from './Pages/Sitemap';
+import Privacy from './Pages/Privacy';
+import FAQs from './Pages/FAQs';
+import CustomerServices from './Pages/CustomerServices';
+import Catalogue from './Pages/Catalogue';
+import Customization from './Pages/Customization';
+import Contact from './Pages/Contact';
 
 function App() {
   const location = useLocation();
@@ -19,22 +25,26 @@ function App() {
 
   return (
     <>
-      {/* Show Navbar only on Home page */}
-      {isHomePage ? <Navbar /> : <NavbarServices />}
+     <TopNavbar />
+     <MainNavbar />
+     {/* <CategoryNavbar /> */}
 
-      {/* <PopupModal /> */}
-      {/* <FloatingIcons /> */}
-      <CustomCursor />
-
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path='/cart' element={<CartPage />} />
-
-        {/* Add other routes here */}
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/services" element={<CustomerServices />} />
+        <Route path="/catalogue" element={<Catalogue />} />
+        <Route path="/customization" element={<Customization />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
+      {/* Footer */}
       <Footer />
     </>
   );

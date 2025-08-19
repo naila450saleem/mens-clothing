@@ -1,0 +1,225 @@
+/* Main Container */
+.sitemap1 {
+  font-family: 'Arial', sans-serif;
+  padding: 20px 0;
+  color: #333;
+  margin-top: 20%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Breadcrumb Navigation */
+.paginations_002 {
+  margin-bottom: 30px;
+}
+
+.paginations_001 {
+  font-size: 14px;
+}
+
+.paginations_001 a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.paginations_001 span {
+  margin: 0 5px;
+  color: #666;
+}
+
+/* Left Side - Accordion Menu */
+.cd-accordion-menu {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.cd-accordion-menu li {
+  border-bottom: 1px solid #ddd;
+}
+
+.cd-accordion-menu li:last-child {
+  border-bottom: none;
+}
+
+.cd-accordion-menu input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+
+.cd-accordion-menu label {
+  position: relative;
+  display: block;
+  padding: 12px 15px;
+  background: #000;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cd-accordion-menu ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  display: block;
+}
+
+.cd-accordion-menu ul li {
+  padding-left: 15px;
+}
+
+.cd-accordion-menu ul li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cd-accordion-menu ul li a:hover {
+  color: #0066cc;
+  background: #f0f0f0;
+}
+
+/* Right Side - Sitemap Links */
+.sitemap {
+  padding: 20px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sitemap ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sitemap > ul > li {
+  margin-bottom: 15px;
+}
+
+.sitemap a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sitemap a:hover {
+  text-decoration: underline;
+}
+
+.sitemap .submenu {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.sitemap .submenu li {
+  margin-bottom: 8px;
+}
+
+.sitemap .submenu a {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Newsletter Styles */
+.newsletter-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.newsletter-section h4 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.newsletter-section input[type="email"] {
+  padding: 12px 20px;
+  width: 350px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .col-lg-3, .col-lg-9 {
+    width: 100%;
+  }
+
+  .col-lg-3 {
+    margin-bottom: 30px;
+  }
+
+  .sitemap1 {
+    margin-top: 30%; /* upar ka margin mobile me thoda zyada lagta hai */
+    padding: 15px 10px;
+  }
+
+  .cd-accordion-menu label {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .cd-accordion-menu ul li a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .sitemap {
+    padding: 15px;
+  }
+
+  .sitemap a {
+    font-size: 14px;
+  }
+
+  .sitemap .submenu a {
+    font-size: 13px;
+  }
+
+  .newsletter-section {
+    padding: 20px 10px;
+  }
+
+  .newsletter-section input[type="email"] {
+    width: 100%;   /* mobile me poora width */
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .paginations_001 {
+    font-size: 12px;
+    padding-top: 60%;
+    margin-left: -20%;
+  }
+
+  .newsletter-section h4 {
+    font-size: 1rem;
+  }
+
+  .sitemap1 {
+    margin-top: 35%;
+  }
+}

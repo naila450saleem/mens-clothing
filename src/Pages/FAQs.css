@@ -1,0 +1,119 @@
+.faq-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20%;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.faq-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #222;
+  text-align: left;
+   line-height: 0.5;
+}
+
+.faq-item {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.faq-question {
+  color: #2a6496;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  color: #444;
+  line-height: 1.6;
+}
+
+.faq-list {
+  padding-left: 20px;
+  color: #444;
+}
+
+.faq-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.services-grid h4 {
+  color: #2a6496;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.services-grid p {
+  color: #444;
+  line-height: 1.5;
+}
+
+.border_005 {
+    border-bottom: solid 2px #a6ce38;
+    max-width: 52px;
+}
+
+/* Newsletter Styles */
+.newsletter-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.newsletter-section h4 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.newsletter-section input[type="email"] {
+  padding: 12px 20px;
+  width: 350px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 28px;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

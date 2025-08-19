@@ -8,6 +8,7 @@ const MainNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showCompactNav, setShowCompactNav] = useState(false);
+  const [openSubMenu, setOpenSubMenu] = useState(null); // track open submenu
 
   const navLinks = [
     { name: "Home", to: "/" },
@@ -32,6 +33,9 @@ const MainNavbar = () => {
     { name: "Customization", to: "/customization" },
     { name: "Contact Us", to: "/contact" },
   ];
+
+  // Only first 5 links for mobile menu
+  const mobileMainLinks = navLinks.slice(0, 5);
 
   const renderNavLinks = (links) =>
     links.map(link => (
@@ -73,7 +77,6 @@ const MainNavbar = () => {
   }, []);
 
   const categoryLinks = navLinks.find(link => link.name === "Our Categories")?.subLinks || [];
-  const mobileMainLinks = navLinks.filter(link => !link.subLinks); // no categories in mobile menu
 
   return (
     <div className="main-navbar-container">
@@ -141,17 +144,55 @@ const MainNavbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="mobile-menu">
-          <X className="close-btn" onClick={() => setIsMenuOpen(false)} />
+          {/* Close button */}
+          <div className="mobile-menu-header">
+            <X className="close-btn" onClick={() => setIsMenuOpen(false)} />
+          </div>
+
+          {/* Mobile nav links */}
           <nav className="mobile-nav">
             {mobileMainLinks.map(link => (
-              <NavLink
-                key={link.name}
-                to={link.to}
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                {link.name}
-              </NavLink>
+              <div key={link.name} className="mobile-nav-item">
+                <div
+                  className="mobile-link"
+                  onClick={(e) => {
+                    if (link.subLinks) {
+                      e.preventDefault(); // prevent navigation
+                      setOpenSubMenu(prev => (prev === link.name ? null : link.name));
+                    } else {
+                      setIsMenuOpen(false);
+                    }
+                  }}
+                >
+                  {link.subLinks ? (
+                    <span className="mobile-link-text">{link.name}</span>
+                  ) : (
+                    <NavLink
+                      to={link.to}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      {link.name}
+                    </NavLink>
+                  )}
+                </div>
+
+                {/* Submenu */}
+                {link.subLinks && openSubMenu === link.name && (
+                  <div className="mobile-submenu">
+                    {link.subLinks.map(sub => (
+                      <NavLink
+                        key={sub.name}
+                        to={sub.to}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="submenu-link"
+                      >
+                        {sub.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
         </div>

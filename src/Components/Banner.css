@@ -9,7 +9,7 @@
 /* Banner Slides */
 .banner-slide {
   position: absolute;
-  top: 0;
+  top: 30px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -33,7 +33,7 @@
 /* Arrows */
 .banner-arrow {
   position: absolute;
-  top: 50%;
+  top: 62%;
   transform: translateY(-50%);
   background-color: #000;
   color: #fff;
@@ -51,6 +51,7 @@
 .banner-arrow:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
 
 /* Bottom Image */
 .banner-bottom-img {
@@ -85,25 +86,43 @@
     min-height: 70vh; /* shorter banner for mobile */
   }
   .banner-arrow {
-    font-size: 26px;
-    padding: 3px 10px;
+    display: none;
   }
+
+  
   .banner-bottom-img img {
-    max-width: 90%;
-    bottom: -20px;
+    width: 150%; /* 100% se zyada karne se image container se thodi bahar bhi ja sakti hai */
+    /* max-width: none; */
+    margin-right: 30px;
+    bottom: -90px;
+    margin-top: -205%;
+  align-items: center;
+ margin-right: -30%;
   }
 }
 
+
+/* Mobile adjustments for banner */
 @media (max-width: 480px) {
-  .page-bg-slider {
-    min-height: 60vh; /* smaller banner height for phones */
+  .banner-container {
+    height: 250px !important;      /* force shorter height */
+    min-height: 200px !important;  /* override any min-height */
+    
   }
-  .banner-arrow {
-    font-size: 20px;
-    padding: 2px 8px;
+
+  .banner-slide {
+    height: 200px !important;      /* ensure slides also shrink */
+    margin-top: 50%;
   }
-  .banner-bottom-img img {
-    max-width: 95%;
-    bottom: -10px;
+
+  .banner-bottom-img {
+    bottom: -10px;                 /* adjust bottom image position */
+  }
+
+  .features {
+    margin-top: 20px;
+    padding-top: 5%;
   }
 }
+
+

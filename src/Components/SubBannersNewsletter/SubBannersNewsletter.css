@@ -97,18 +97,76 @@
 }
 
 
-/* Responsive */
-@media (max-width: 992px) {
-  .sub_banners .row,
-  .news_letter .row {
-    flex-direction: column;
+/* Mobile devices: phones */
+@media (max-width: 576px) {
+
+  /* Sub banners section */
+  .sub_banners {
+    padding: 10px 0;
+    margin-left: 10px; /* reduce left margin for small screens */
+  }
+
+  .sub_banners .left h1 {
+    font-size: 28px; /* smaller font */
+    margin-bottom: 15px;
+    text-align: center; /* center align */
   }
 
   .sub_banners iframe {
-    height: 300px;
+    width: 100%;  /* full width */
+    height: 200px; /* smaller height */
+    margin-bottom: 20px;
   }
 
+  .sub_banners .right img {
+    width: 100%;  /* full width */
+    margin-left: 0; /* reset margin */
+    display: block;
+  }
+
+  /* Newsletter section */
   .news_letter {
-    padding: 40px 0;
+    padding: 30px 10px;
+  }
+
+  .news_letter .title_section h1 {
+    font-size: 16px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .news_letter_002 {
+    flex-direction: column; /* stack form and image vertically */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .news_letter_001 form {
+    width: 100%; /* full width form */
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-group {
+    margin-right: 0; /* remove right margin */
+    margin-bottom: 15px; /* spacing below input */
+  }
+
+  .form-control {
+    margin-left: 0; /* remove left margin */
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%; /* button full width on mobile */
+    height: 45px;
+    margin-top: 10px;
+  }
+
+  .news_letter .right img {
+    max-width: 100%;
+    margin-left: 0;
   }
 }
+

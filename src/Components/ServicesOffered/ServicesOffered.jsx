@@ -29,27 +29,27 @@ const services = [
   },
   {
     img: s4,
-    title: "FREE DESIGNING & MOCKUPS",
+    title: <>FREE DESIGNING & <br /> MOCKUPS</>,
     desc: "Free Mockup and designs available on apparels and Sportwear like T-Shirt, Hoodies, Tracksuits, sport uniform’s etc. Custom designs, logos, pictures as per requirements.",
   },
   {
     img: s5,
-    title: "CUSTOM RHINESTONE TRANSFER",
+    title: <>CUSTOM RHINESTONE <br /> TRANSFER</>,
     desc: "Rhinestone available on apparels and Sportwear like T-Shirt, Hoodies, Tracksuits, sport uniform’s etc. Custom designs, logos, pictures as per requirements.",
   },
   {
     img: s6,
-    title: "CUSTOM VINYL FOIL PRINTING",
+    title: <>CUSTOM VINYL FOIL<br /> PRINTING</>,
     desc: "Vinyl Foil Printing available on apparels and Sportwear like T-Shirt, Hoodies, Tracksuits, sport uniform’s etc. Custom designs, logos, pictures as per requirements.",
   },
   {
     img: s7,
-    title: "CUSTOM REFLECTIVE PRINTING",
+    title: <>CUSTOM REFLECTIVE<br /> PRINTING</>,
     desc: "Reflective printing available on apparels and Sportwear like T-Shirt, Hoodies, Tracksuits, sport uniform’s etc. Custom designs, logos, pictures as per requirements.",
   },
   {
     img: s8,
-    title: "CUSTOM CHENILLE EMBROIDERY",
+    title: <>CUSTOM CHENILLE<br /> EMBROIDERY</>,
     desc: "Chenille Embroidery available on apparels and Sportwear like T-Shirt, Hoodies, Tracksuits, sport uniform’s etc. Custom designs, logos, pictures as per requirements.",
   },
 ];

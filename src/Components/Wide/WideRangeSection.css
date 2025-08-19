@@ -1,6 +1,6 @@
 .wide-range-section {
   text-align: center;
-  padding: 60px 5px 30px 5px; /* added more top padding for mobile space */
+  padding: 20px 5px 30px 5px; /* added more top padding for mobile space */
 }
 
 .wide-range-text {
@@ -70,8 +70,8 @@
 ============================ */
 @media (max-width: 768px) {
   .wide-range-section {
-    padding: 80px 10px 30px 10px; /* extra top space on mobile */
-    margin-top: 40%;
+    padding: 10px 10px 30px 10px; /* extra top space on mobile */
+    /* margin-top: 10%; */
   }
 
   .wide-range-text h2 {

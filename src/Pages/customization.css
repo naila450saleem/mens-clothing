@@ -1,0 +1,11 @@
+.customization-img {
+  margin-top: 30px; /* newsletter se thoda gap */
+  text-align: center; /* image ko center align karega */
+}
+
+.customization-img img {
+  max-width: 100%; /* parent div se bahar na nikle */
+  height: auto; /* image proportion maintain kare */
+  border-radius: 8px; /* optional: thoda rounded corners */
+  display: inline-block;
+}
