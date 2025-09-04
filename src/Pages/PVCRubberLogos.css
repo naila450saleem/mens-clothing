@@ -1,0 +1,27 @@
+/* Tablet */
+  @media (max-width: 768px) {
+    .pvc-title {
+      font-size: 28px;
+      margin: 15px 0 8px 0;
+    }
+
+    .border_005 {
+      width: 120px;
+      height: 3px;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .pvc-title {
+      font-size: 1.5rem;
+     padding-left: 30px;
+    }
+
+    .border_005 {
+      width: 80px;
+      height: 2px;
+      margin-bottom: 15px;
+    }
+}

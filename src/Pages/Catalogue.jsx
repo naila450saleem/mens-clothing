@@ -34,7 +34,7 @@ export default function Catalogue() {
        <div className="paginations_001">
         <a href="https://coresportswears.com/">Home</a>
         <span>/</span>
-        <span>Privacy Policy</span>
+        <span>Catalogue</span>
       </div>
      
 

@@ -1,0 +1,175 @@
+/* -------- Main Container -------- */
+.label-tags-container {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* -------- Breadcrumbs -------- */
+.paginations_001 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 20%;
+}
+
+.paginations_001 a {
+  text-decoration: none;
+  color: #0073e6;
+  margin-right: 5px;
+}
+
+.paginations_001 span {
+  margin: 0 3px;
+  color: #333;
+}
+
+/* -------- Title -------- */
+.printings-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #222;
+  text-align: center;
+  margin-left: -90%;
+}
+
+
+.border_005 {
+    border-bottom: solid 2px #a6ce38;
+    max-width: 52px;
+      
+}
+
+/* -------- Fabric Sections -------- */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;   /* ✅ text always beside image */
+  margin-bottom: 40px;
+}
+
+.col-lg-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-lg-9 {
+  flex: 1;
+  max-width: 75%;
+}
+
+.left img {
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+  margin-left: 35px;
+}
+
+.right {
+  padding-left: 20px;
+  text-align: left;
+  margin-top: -15%;
+}
+
+.right h1 {
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.right p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Divider image under each section */
+.row img[alt="divider"] {
+  max-width: 900px;
+  margin-top: 10px;
+  opacity: 0.7;
+  align-items: center;
+}
+
+/* -------- Newsletter Section -------- */
+.newsletter-section {
+  margin-top: 50px;
+  text-align: center;
+  background: #f7f7f7;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.newsletter-section h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.newsletter-section input[type="email"] {
+  padding: 12px;
+  width: 300px;
+  max-width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+}
+
+.newsletter-section input[type="email"]:focus {
+  border-color: #0073e6;
+  box-shadow: 0 0 6px rgba(0,115,230,0.3);
+}
+
+/* -------- Responsive Design -------- */
+@media (max-width: 1024px) {
+  .right h1 {
+    font-size: 20px;
+  }
+  .printings-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;  /* ✅ mobile: image upar, text neeche */
+    text-align: center;
+  }
+
+  .col-lg-3, .col-lg-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .right {
+    padding-left: 0;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .right h1 {
+    font-size: 18px;
+  }
+
+  .newsletter-section input[type="email"] {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .fabric-title {
+    font-size: 1.5rem;
+    padding-left: 30px;
+  }
+
+  .newsletter-section h4 {
+    font-size: 18px;
+  }
+}

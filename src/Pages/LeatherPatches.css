@@ -1,0 +1,75 @@
+.paginations_001 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  margin-left: -30px;
+}
+
+.paginations_001 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.paginations_001 a:hover {
+  text-decoration: underline;
+}
+
+.paginations_001 span {
+  color: #333;
+}
+
+.border_005 {
+  border-bottom: solid 2px #a6ce38;
+  max-width: 52px;
+  margin: 10px 30px 30px !important;
+
+}
+
+.lather-title{
+padding-left: 30px;
+}
+
+.leather-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Image aur text ke beech ka gap kam kiya */
+  margin: 2rem 0;
+}
+
+.leather-image img {
+  width:300px;       /* Image width ko adjust karne ke liye */
+  height: 300px;     /* Image height kam kiya */
+  border-radius: 8px;
+  object-fit: cover; /* Image proportion maintain */
+}
+
+.leather-text h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.leather-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .leather-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .leather-image img {
+    max-width: 80%;
+    height: auto;  /* Mobile me height automatically adjust ho jaye */
+    margin: 0 auto;
+  }
+
+  .paginations_001{
+    padding-top: 40%;
+    padding-left: 25px;
+  }
+}

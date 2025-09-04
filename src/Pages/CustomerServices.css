@@ -1,0 +1,103 @@
+/* Container */
+.customer-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding-top: -10%;
+}
+
+/* Breadcrumbs */
+.paginations_001 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  margin-left: -20px;
+}
+
+.paginations_001 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.paginations_001 a:hover {
+  text-decoration: underline;
+}
+
+.paginations_001 span {
+  color: #333;
+}
+
+/* Title */
+.customer-services-title {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Divider */
+.border_005 {
+  border-bottom: solid 2px #a6ce38;
+  max-width: 52px;
+  margin: 10px 0 30px;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.newsletter-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.newsletter-section input[type="email"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.newsletter-section input[type="email"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .customer-services-container {
+    padding: 15px;
+    padding-top: 20%;
+  }
+
+  .customer-services-title {
+    font-size: 20px;
+  }
+
+  .newsletter-section input[type="email"] {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-services-title {
+    font-size: 18px;
+  }
+
+  .newsletter-section h4 {
+    font-size: 16px;
+  }
+}

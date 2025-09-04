@@ -1,3 +1,12 @@
+.customization-container{
+font-family: Arial, sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 20%;
+}
+
 .customization-img {
   margin-top: 30px; /* newsletter se thoda gap */
   text-align: center; /* image ko center align karega */
@@ -8,4 +17,36 @@
   height: auto; /* image proportion maintain kare */
   border-radius: 8px; /* optional: thoda rounded corners */
   display: inline-block;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.newsletter-section h3 {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ddd;
+}
+
+.newsletter-form button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

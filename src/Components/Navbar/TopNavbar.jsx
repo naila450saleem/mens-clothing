@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./TopNavbar.css";
 
 const TopNavbar = () => {
@@ -19,16 +20,17 @@ const TopNavbar = () => {
 
   return (
     <nav className={`top-navbar ${hidden ? "hidden" : ""}`}>
-      <ul>
-        <li><a href="#">Printings</a></li>
-        <li><a href="#">Embroideries</a></li>
-        <li><a href="#">Labels/Tags</a></li>
-        <li><a href="#">Leather Patches</a></li>
-        <li><a href="#">PVC & Rubber Logos</a></li>
-        <li><a href="#">Tag Cards</a></li>
-        <li><a href="#">Poly Bags</a></li>
-        <li><a href="#">Fabrics</a></li>
-      </ul>
+    <ul>
+  <li><Link to="/printings">Printings</Link></li>
+  <li><Link to="/embroideries">Embroideries</Link></li>
+  <li><Link to="/labels-tags">Labels/Tags</Link></li>
+  <li><Link to="/leather-patches">Leather Patches</Link></li>
+  <li><Link to="/pvc-rubber-logos">PVC & Rubber Logos</Link></li>
+  <li><Link to="/tag-cards">Tag Cards</Link></li>
+  <li><Link to="/poly-bags">Poly Bags</Link></li>
+  <li><Link to="/fabrics">Fabrics</Link></li>
+</ul>
+
     </nav>
   );
 };

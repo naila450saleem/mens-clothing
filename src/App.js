@@ -19,15 +19,25 @@ import Catalogue from './Pages/Catalogue';
 import Customization from './Pages/Customization';
 import Contact from './Pages/Contact';
 
+// Extra pages for TopNavbar
+import Printings from './Pages/Printings';
+import Embroideries from './Pages/Embroideries';
+import LabelsTags from './Pages/LabelsTags';
+import LeatherPatches from './Pages/LeatherPatches';
+import PVCRubberLogos from './Pages/PVCRubberLogos';
+import TagCards from './Pages/TagCards';
+import PolyBags from './Pages/PolyBags';
+import Fabrics from './Pages/Fabrics';
+
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
   return (
     <>
-     <TopNavbar />
-     <MainNavbar />
-     {/* <CategoryNavbar /> */}
+      <TopNavbar />
+      <MainNavbar />
+      {/* <CategoryNavbar /> */}
 
       {/* Routes */}
       <Routes>
@@ -42,6 +52,16 @@ function App() {
         <Route path="/catalogue" element={<Catalogue />} />
         <Route path="/customization" element={<Customization />} />
         <Route path="/contact" element={<Contact />} />
+
+        {/* TopNavbar pages */}
+        <Route path="/printings" element={<Printings />} />
+        <Route path="/embroideries" element={<Embroideries />} />
+        <Route path="/labels-tags" element={<LabelsTags />} />
+        <Route path="/leather-patches" element={<LeatherPatches />} />
+        <Route path="/pvc-rubber-logos" element={<PVCRubberLogos />} />
+        <Route path="/tag-cards" element={<TagCards />} />
+        <Route path="/poly-bags" element={<PolyBags />} />
+        <Route path="/fabrics" element={<Fabrics />} />
       </Routes>
 
       {/* Footer */}
